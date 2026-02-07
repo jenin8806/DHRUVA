@@ -30,9 +30,10 @@ body {
   color: #f8fafc;
 }
 
-input, textarea, select {
+/* Removed global dark input color - now controlled per component */
+/* input, textarea, select {
   color: #1a1a1a;
-}
+} */
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {

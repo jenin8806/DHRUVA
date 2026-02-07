@@ -279,7 +279,7 @@ export const DotGrid = ({
       }
     };
 
-    const throttledMove = throttle(onMove, 50) as (e: MouseEvent) => void;
+    const throttledMove = throttle(onMove as (...args: unknown[]) => void, 50) as unknown as (e: MouseEvent) => void;
     window.addEventListener("mousemove", throttledMove, { passive: true });
     window.addEventListener("click", onClick);
 

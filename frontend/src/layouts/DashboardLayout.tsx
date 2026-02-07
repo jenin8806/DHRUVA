@@ -1,4 +1,4 @@
-import { useState, type ElementType, type FC } from "react";
+import { useState, type FC } from "react";
 import { useAuth } from "../context/AuthContext";
 import { useWeb3 } from "../context/Web3Context";
 import { useNavigate, useLocation, Outlet } from "react-router-dom";
@@ -19,7 +19,8 @@ import { clsx } from "clsx";
 
 interface SidebarItem {
   name: string;
-  icon: ElementType;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  icon: any;
   path: string;
 }
 

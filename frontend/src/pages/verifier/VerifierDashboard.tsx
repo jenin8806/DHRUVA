@@ -231,8 +231,8 @@ export const VerifierDashboard = () => {
               <div key={i} className="p-4 flex flex-wrap items-center justify-between gap-4">
                 <div className="min-w-0 flex-1">
                   <p className="font-mono text-xs text-gray-500 break-all">{r.hash}</p>
-                  {r.credential && typeof r.credential === "object" && "credentialName" in r.credential && (
-                    <p className="text-sm font-medium text-white mt-1">{String((r.credential as { credentialName?: string }).credentialName)}</p>
+                  {!!r.credential && typeof r.credential === "object" && "credentialName" in r.credential && (
+                    <p className="text-sm font-medium text-white mt-1">{String((r.credential as unknown as { credentialName?: string }).credentialName)}</p>
                   )}
                 </div>
                 {getStatusBadge(r)}

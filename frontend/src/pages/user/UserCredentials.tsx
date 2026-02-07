@@ -226,7 +226,7 @@ export const UserCredentials = () => {
                   </div>
                   <div className="flex gap-2 mt-4 pt-4 border-t border-white/10">
                     <button
-                      onClick={() => (cred as { fileUrl?: string }).fileUrl && window.open((cred as { fileUrl: string }).fileUrl, "_blank")}
+                      onClick={() => (cred as unknown as { fileUrl?: string }).fileUrl && window.open((cred as unknown as { fileUrl: string }).fileUrl, "_blank")}
                       className="flex-1 flex items-center justify-center py-2 px-4 rounded-xl border border-white/20 text-sm font-medium text-white/90 hover:bg-white/10 transition-colors"
                     >
                       <Download className="w-4 h-4 mr-2" />

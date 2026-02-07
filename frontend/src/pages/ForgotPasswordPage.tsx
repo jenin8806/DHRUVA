@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { Link } from "react-router-dom";
-import { Shield, Key, ArrowRight, CheckCircle, Mail } from "lucide-react";
+import { Shield, ArrowRight, CheckCircle, Mail } from "lucide-react";
 import { AuthLayout } from "../layouts/AuthLayout";
 import { BackButton } from "../components/BackButton";
 

@@ -1,21 +1,17 @@
 import React from "react";
 import { Navbar } from "../components/Navbar";
-import { DotGrid } from "../components/DotGrid";
+import Silk from "../components/Silk";
 
 export const AuthLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <div className="min-h-screen flex flex-col bg-[#0f0a18]">
       <div className="fixed inset-0 z-0">
-        <DotGrid
-          dotSize={5}
-          gap={15}
-          baseColor="#271E37"
-          activeColor="#5227FF"
-          proximity={100}
-          shockRadius={200}
-          shockStrength={5}
-          returnDuration={1.5}
-          style={{ width: "100%", height: "100%" }}
+        <Silk
+          speed={5}
+          scale={1}
+          color="#28243d"
+          noiseIntensity={1.5}
+          rotation={0}
         />
       </div>
       <Navbar />

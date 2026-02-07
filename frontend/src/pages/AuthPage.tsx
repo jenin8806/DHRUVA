@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Shield, Lock, ArrowRight, AlertCircle, User, Mail, Eye, EyeOff } from "lucide-react";
+import { Shield, ArrowRight, AlertCircle, User, Mail, Eye, EyeOff } from "lucide-react";
 import { AuthLayout } from "../layouts/AuthLayout";
 import { BackButton } from "../components/BackButton";
 
@@ -26,8 +26,8 @@ export const AuthPage = () => {
   const navigate = useNavigate();
 
   const inputClass =
-    "w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[#5227FF] focus:ring-1 focus:ring-[#5227FF] transition-all";
-  const labelClass = "block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2";
+    "w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 !text-white placeholder-gray-500 focus:outline-none focus:border-[#5227FF] focus:ring-1 focus:ring-[#5227FF] transition-all";
+  const labelClass = "block text-xs font-semibold text-white uppercase tracking-wider mb-2";
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -89,7 +89,7 @@ export const AuthPage = () => {
                     type="text"
                     required
                     className={inputClass}
-                    placeholder="John Doe"
+                    placeholder="Enter your full name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
@@ -103,7 +103,7 @@ export const AuthPage = () => {
                     type="email"
                     required
                     className={inputClass}
-                    placeholder="john@example.com"
+                    placeholder="Enter your email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
@@ -117,9 +117,9 @@ export const AuthPage = () => {
                   value={role}
                   onChange={(e) => setRole(e.target.value as "user" | "org" | "verifier")}
                 >
-                  <option value="user">Holder (Student / Professional)</option>
-                  <option value="org">Issuer (University / Employer)</option>
-                  <option value="verifier">Verifier (Employer / Bank)</option>
+                  <option value="user" className="bg-[#0f0a18] text-white">Holder (Student / Professional)</option>
+                  <option value="org" className="bg-[#0f0a18] text-white">Issuer (University / Employer)</option>
+                  <option value="verifier" className="bg-[#0f0a18] text-white">Verifier (Employer / Bank)</option>
                 </select>
               </div>
             </>
@@ -132,7 +132,7 @@ export const AuthPage = () => {
               required
               autoComplete="username"
               className={inputClass}
-              placeholder="Username"
+              placeholder="Enter your username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
@@ -145,7 +145,7 @@ export const AuthPage = () => {
                 required
                 autoComplete="current-password"
                 className={inputClass}
-                placeholder="••••••••"
+                placeholder="Enter your password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -179,7 +179,7 @@ export const AuthPage = () => {
                   required
                   autoComplete="new-password"
                   className={inputClass}
-                  placeholder="••••••••"
+                  placeholder="Confirm your password"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                 />
